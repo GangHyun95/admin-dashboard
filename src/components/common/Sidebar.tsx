@@ -23,9 +23,9 @@ const SIDEBAR_ITEMS = [
 ];
 
 export default function Sidebar() {
-    const [isSidebarOpen, setSidebarOpen] = useState(true);
-
     const isMobile = window.innerWidth <= 768;
+    const [isSidebarOpen, setSidebarOpen] = useState(!isMobile);
+
     return (
         <motion.div
             className={`${
@@ -40,7 +40,7 @@ export default function Sidebar() {
             }}
             // transition={{ duration: 0.3, ease: 'easeInOut' }}
         >
-            <div className='h-full bg-gray-800 bg-opacity-50 backdrop-blur-md p-4 flex flex-col border-r border-gray-700'>
+            <div className='h-full bg-gray-800/50 backdrop-blur-md p-4 flex flex-col border-r border-gray-700'>
                 <motion.button
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
