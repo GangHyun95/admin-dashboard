@@ -24,12 +24,20 @@ const SIDEBAR_ITEMS = [
 
 export default function Sidebar() {
     const [isSidebarOpen, setSidebarOpen] = useState(true);
+
+    const isMobile = window.innerWidth <= 768;
     return (
         <motion.div
-            className={`relative z-10 transition-all duration-300 ease-in-out flex-shrink-0 ${
+            className={`${
+                isMobile
+                    ? 'fixed inset-0 z-40'
+                    : 'relative z-10 flex-shrink-0'
+            } transition-all duration-300 ease-in-out ${
                 isSidebarOpen ? 'w-64' : 'w-20'
             }`}
-            animate={{ width: isSidebarOpen ? 256 : 80 }}
+            animate={{
+                width: isSidebarOpen ? (isMobile ? '100%' : 256) : 80,
+            }}
             // transition={{ duration: 0.3, ease: 'easeInOut' }}
         >
             <div className='h-full bg-gray-800 bg-opacity-50 backdrop-blur-md p-4 flex flex-col border-r border-gray-700'>
@@ -47,7 +55,10 @@ export default function Sidebar() {
                             <motion.div className='flex items-center p-4 text-sm font-medium rounded-lg hover:bg-gray-700 transition-colors mb-2'>
                                 <item.icon
                                     size={20}
-                                    style={{ color: item.color, minWidth: 20 }}
+                                    style={{
+                                        color: item.color,
+                                        minWidth: 20,
+                                    }}
                                 />
                                 <AnimatePresence>
                                     {isSidebarOpen && (
@@ -58,7 +69,11 @@ export default function Sidebar() {
                                                 opacity: 1,
                                                 width: 'auto',
                                             }}
-                                            exit={{ opacity: 0, width: 0 }}
+                                            exit={
+                                                isMobile
+                                                    ? undefined
+                                                    : { opacity: 0, width: 0 }
+                                            }
                                             transition={{
                                                 duration: 0.2,
                                                 delay: 0.3,
