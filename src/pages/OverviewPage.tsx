@@ -4,6 +4,7 @@ import { BarChart2, ShoppingBag, Users, Zap } from 'lucide-react';
 import SalesOverviewChart from '../components/overview/SalesOverviewChart';
 import CategoryDistributionChart from '../components/overview/CategoryDistributionChart';
 import SalesChannelChart from '../components/overview/SalesChannelChart';
+import ChartLayout from '../layout/ChartLayout';
 export default function OverviewPage() {
     return (
         <>
@@ -39,11 +40,11 @@ export default function OverviewPage() {
                 />
             </motion.div>
 
-            <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
+            <ChartLayout>
                 <SalesOverviewChart />
                 <CategoryDistributionChart />
                 <SalesChannelChart />
-            </div>
+            </ChartLayout>
         </>
     );
 }

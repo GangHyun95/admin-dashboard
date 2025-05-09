@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom';
 
 const SIDEBAR_ITEMS = [
     { name: '개요', icon: BarChart2, color: '#6366f1', href: '/' },
-    { name: '제품', icon: ShoppingBag, color: '#8B5CF6', href: '/products' },
+    { name: '상품', icon: ShoppingBag, color: '#8B5CF6', href: '/products' },
     { name: '사용자', icon: Users, color: '#EC4899', href: '/users' },
     { name: '매출', icon: DollarSign, color: '#10B981', href: '/sales' },
     { name: '주문', icon: ShoppingCart, color: '#F59E0B', href: '/orders' },
@@ -47,7 +47,11 @@ export default function Sidebar() {
                 </motion.button>
                 <nav className='mt-8 flex-grow'>
                     {SIDEBAR_ITEMS.map((item) => (
-                        <Link key={item.href} to={item.href}>
+                        <Link
+                            key={item.href}
+                            to={item.href}
+                            onClick={() => isMobile && setSidebarOpen(false)}
+                        >
                             <motion.div className='flex items-center p-4 text-sm font-medium rounded-lg hover:bg-gray-700 transition-colors mb-2'>
                                 <item.icon
                                     size={20}

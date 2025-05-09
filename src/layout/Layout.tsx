@@ -10,7 +10,7 @@ export default function Layout() {
             case '/':
                 return '개요';
             case '/products':
-                return '제품';
+                return '상품';
             default:
                 return '';
         }
@@ -19,7 +19,7 @@ export default function Layout() {
         <div className='flex h-screen bg-gray-900 text-gray-100 overflow-hidden pl-20 md:pl-0'>
             <div className='fixed inset-0 z-0'>
                 <div className='absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 opacity-80' />
-                <div className='absolute inset-0 backdrop:blur-sm' />
+                <div className='absolute inset-0 backdrop-blur-sm'/>
             </div>
 
             <Sidebar />
