@@ -28,11 +28,7 @@ export default function Sidebar() {
 
     return (
         <motion.div
-            className={`${
-                isMobile
-                    ? 'fixed inset-0 z-40'
-                    : 'relative z-10 flex-shrink-0'
-            } transition-all duration-300 ease-in-out ${
+            className={`fixed inset-0 z-40 transition-all duration-300 ease-in-out md:relative md:z-10 md:flex-shrink-0 ${
                 isSidebarOpen ? 'w-64' : 'w-20'
             }`}
             animate={{
