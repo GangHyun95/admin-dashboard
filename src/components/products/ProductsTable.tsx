@@ -45,7 +45,7 @@ const PRODUCT_DATA = [
     },
 ];
 export default function ProductsTable() {
-    const [serachTerm, setSearchTerm] = useState('');
+    const [searchTerm, setSearchTerm] = useState('');
     const [filteredProducts, setFilteredProducts] = useState(PRODUCT_DATA);
 
     const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -76,7 +76,7 @@ export default function ProductsTable() {
                         placeholder='상품 검색...'
                         className='bg-gray-700 text-white placeholder-gray-400 rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500'
                         onChange={handleSearch}
-                        value={serachTerm}
+                        value={searchTerm}
                     />
                     <Search
                         className='absolute left-3 top-2.5 text-gray-400'

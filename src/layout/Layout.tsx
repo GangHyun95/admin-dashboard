@@ -11,6 +11,8 @@ export default function Layout() {
                 return '개요';
             case '/products':
                 return '상품';
+            case '/users':
+                return '사용자';
             default:
                 return '';
         }
