@@ -13,6 +13,14 @@ export default function Layout() {
                 return '상품';
             case '/users':
                 return '사용자';
+            case '/sales':
+                return '매출';
+            case '/orders':
+                return '주문';
+            case '/analytics':
+                return '분석';
+            case '/settings':
+                return '설정';
             default:
                 return '';
         }
