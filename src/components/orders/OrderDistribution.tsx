@@ -2,36 +2,33 @@ import {
     PieChart,
     Pie,
     Cell,
-    Tooltip,
     ResponsiveContainer,
+    Tooltip,
     Legend,
 } from 'recharts';
 import CardLayout from '../../layout/CardLayout';
 
-const categoryData = [
-    { name: '전자제품', value: 4500 },
-    { name: '패션/의류', value: 3200 },
-    { name: '홈/가전', value: 2800 },
-    { name: '도서/서적', value: 2100 },
-    { name: '스포츠/레저', value: 1900 },
+const orderStatusData = [
+    { name: '대기 중', value: 30 },
+    { name: '처리 중', value: 45 },
+    { name: '배송 중', value: 60 },
+    { name: '배송 완료', value: 120 },
 ];
+const COLORS = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#FED766', '#2AB7CA'];
 
-const COLORS = ['#6366F1', '#8B5CF6', '#EC4899', '#10B981', '#F59E0B'];
-
-export default function CategoryDistributionChart () {
+export default function OrderDistribution() {
     return (
         <CardLayout delay={0.3}>
-            <h2 className='text-lg font-medium mb-4 text-gray-100'>
-                상품 카테고리별 비율
+            <h2 className='text-xl font-semibold text-gray-100 mb-4'>
+                주문 상태
             </h2>
-            <div className='h-80'>
-                <ResponsiveContainer width={'100%'} height={'100%'}>
+            <div style={{ width: '100%', height: 300 }}>
+                <ResponsiveContainer>
                     <PieChart>
                         <Pie
-                            data={categoryData}
-                            cx={'50%'}
-                            cy={'50%'}
-                            labelLine={false}
+                            data={orderStatusData}
+                            cx='50%'
+                            cy='50%'
                             outerRadius={80}
                             fill='#8884d8'
                             dataKey='value'
@@ -40,7 +37,7 @@ export default function CategoryDistributionChart () {
                             }
                             isAnimationActive={false}
                         >
-                            {categoryData.map((entry, index) => (
+                            {orderStatusData.map((entry, index) => (
                                 <Cell
                                     key={`cell-${index}`}
                                     fill={COLORS[index % COLORS.length]}
@@ -53,6 +50,7 @@ export default function CategoryDistributionChart () {
                                 borderColor: '#4B5563',
                             }}
                             itemStyle={{ color: '#E5E7EB' }}
+                            formatter={(value, name) => [`${value.toLocaleString()}건`, name]}
                         />
                         <Legend />
                     </PieChart>
@@ -60,4 +58,4 @@ export default function CategoryDistributionChart () {
             </div>
         </CardLayout>
     );
-};
+}

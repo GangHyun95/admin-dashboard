@@ -24,7 +24,7 @@ export default function SalesOverviewChart() {
     const [selectedTimeRange, setSelectedTimeRange] = useState('This Month');
 
     return (
-        <CardLayout className='mb-8 lg:col-span-2'>
+        <CardLayout className='lg:col-span-2'>
             <div className='flex items-center justify-between mb-6'>
                 <h2 className='text-xl font-semibold text-gray-100'>
                     매출 현황

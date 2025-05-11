@@ -43,9 +43,7 @@ export default function SalesOverviewChart() {
                                 borderColor: '#4B5563',
                             }}
                             itemStyle={{ color: '#E5E7EB' }}
-                            formatter={(value: number) => [
-                                `매출: $${value.toLocaleString()}`,
-                            ]}
+                            formatter={(value,) => [`$${value.toLocaleString()}`, '매출']}
                         />
                         <Line
                             type='monotone'

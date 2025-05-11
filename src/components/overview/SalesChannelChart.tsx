@@ -20,7 +20,7 @@ const SALES_CHANNEL_DATA = [
     { name: '소셜 미디어', value: 18700 },
 ];
 
-const SalesChannelChart = () => {
+export default function SalesChannelChart() {
     return (
         <CardLayout className='lg:col-span-2' delay={0.4}>
             <h2 className='text-lg font-medium mb-4 text-gray-100'>
@@ -54,5 +54,4 @@ const SalesChannelChart = () => {
             </div>
         </CardLayout>
     );
-};
-export default SalesChannelChart;
+}

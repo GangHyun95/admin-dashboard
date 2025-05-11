@@ -31,7 +31,7 @@ const statCardData = [
         color: '#EF4444',
     },
 ];
-const SalesPage = () => {
+export default function SalesPage() {
     return (
         <>
             <StatCardLayout data={statCardData} />
@@ -42,5 +42,4 @@ const SalesPage = () => {
             </GridLayout>
         </>
     );
-};
-export default SalesPage;
+}

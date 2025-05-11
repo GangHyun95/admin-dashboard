@@ -76,7 +76,7 @@ const userActivityData = [
     },
 ];
 
-const UserActivityHeatmap = () => {
+export default function UserActivityHeatmap () {
     return (
         <CardLayout delay={0.4}>
             <h2 className='text-xl font-semibold text-gray-100 mb-4'>
@@ -94,7 +94,7 @@ const UserActivityHeatmap = () => {
                                 borderColor: '#4B5563',
                             }}
                             itemStyle={{ color: '#E5E7EB' }}
-                            formatter={(value) => `${value}명`}
+                            formatter={(value) => `${value.toLocaleString()}명`}
                         />
                         <Legend />
                         <Bar dataKey='0-4' stackId='a' fill='#6366F1' />
@@ -109,4 +109,3 @@ const UserActivityHeatmap = () => {
         </CardLayout>
     );
 };
-export default UserActivityHeatmap;

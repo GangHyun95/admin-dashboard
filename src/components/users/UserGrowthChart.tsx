@@ -18,7 +18,7 @@ const userGrowthData = [
     { month: '6월', users: 5000 },
 ];
 
-const UserGrowthChart = () => {
+export default function UserGrowthChart() {
     return (
         <CardLayout delay={0.3}>
             <h2 className='text-xl font-semibold text-gray-100 mb-4'>
@@ -36,12 +36,10 @@ const UserGrowthChart = () => {
                                 borderColor: '#4B5563',
                             }}
                             itemStyle={{ color: '#E5E7EB' }}
-                            formatter={(value, name) => {
-                                if (name === 'users') {
-                                    return [`${value}명`, '회원 수'];
-                                }
-                                return [value, name];
-                            }}
+                            formatter={(value) => [
+                                `${value.toLocaleString()}명`,
+                                '회원 수',
+                            ]}
                         />
                         <Line
                             type='monotone'
@@ -56,5 +54,4 @@ const UserGrowthChart = () => {
             </div>
         </CardLayout>
     );
-};
-export default UserGrowthChart;
+}

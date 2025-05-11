@@ -18,7 +18,7 @@ const userDemographicsData = [
     { name: '55세 이상', value: 10 },
 ];
 
-const UserDemographicsChart = () => {
+export default function UserDemographicsChart() {
     return (
         <CardLayout className='lg:col-span-2' delay={0.5}>
             <h2 className='text-xl font-semibold text-gray-100 mb-4'>
@@ -59,5 +59,4 @@ const UserDemographicsChart = () => {
             </div>
         </CardLayout>
     );
-};
-export default UserDemographicsChart;
+}

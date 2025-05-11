@@ -9,26 +9,28 @@ import {
 } from 'recharts';
 import CardLayout from '../../layout/CardLayout';
 
-const salesData = [
-    { name: '1월', 매출: 4000 },
-    { name: '2월', 매출: 3000 },
-    { name: '3월', 매출: 5000 },
-    { name: '4월', 매출: 4500 },
-    { name: '5월', 매출: 6000 },
-    { name: '6월', 매출: 5500 },
+const dailyOrdersData = [
+    { date: '07/01', orders: 45 },
+    { date: '07/02', orders: 52 },
+    { date: '07/03', orders: 49 },
+    { date: '07/04', orders: 60 },
+    { date: '07/05', orders: 55 },
+    { date: '07/06', orders: 58 },
+    { date: '07/07', orders: 62 },
 ];
 
-export default function SalesTrendChart() {
+export default function DailyOrders() {
     return (
-        <CardLayout delay={0.3}>
+        <CardLayout>
             <h2 className='text-xl font-semibold text-gray-100 mb-4'>
-                판매 트렌드
+                일별 주문 현황
             </h2>
+
             <div style={{ width: '100%', height: 300 }}>
                 <ResponsiveContainer>
-                    <LineChart data={salesData}>
+                    <LineChart data={dailyOrdersData}>
                         <CartesianGrid strokeDasharray='3 3' stroke='#374151' />
-                        <XAxis dataKey='name' stroke='#9CA3AF' />
+                        <XAxis dataKey='date' stroke='#9CA3AF' />
                         <YAxis stroke='#9CA3AF' />
                         <Tooltip
                             contentStyle={{
@@ -36,10 +38,11 @@ export default function SalesTrendChart() {
                                 borderColor: '#4B5563',
                             }}
                             itemStyle={{ color: '#E5E7EB' }}
+                            formatter={(value) => [`${value.toLocaleString()}건`, `주문 수`]}
                         />
                         <Line
                             type='monotone'
-                            dataKey='매출'
+                            dataKey='orders'
                             stroke='#8B5CF6'
                             strokeWidth={2}
                         />
