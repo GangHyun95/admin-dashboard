@@ -1,9 +1,9 @@
 import { AlertTriangle, DollarSign, Package, TrendingUp } from 'lucide-react';
-import ChartLayout from '../layout/ChartLayout';
+import StatCardLayout from '../layout/StatCardLayout';
+import GridLayout from '../layout/GridLayout';
 import CategoryDistributionChart from '../components/overview/CategoryDistributionChart';
 import SalesTrendChart from '../components/products/SalesTrendChart';
 import ProductsTable from '../components/products/ProductsTable';
-import StatCardLayout from '../layout/StatCardLayout';
 
 const statCardData = [
     {
@@ -38,10 +38,10 @@ export default function ProductsPage() {
             <StatCardLayout data={statCardData} />
 
             <ProductsTable />
-            <ChartLayout>
+            <GridLayout>
                 <SalesTrendChart />
                 <CategoryDistributionChart />
-            </ChartLayout>
+            </GridLayout>
         </>
     );
 }

@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import {
     AreaChart,
     Area,
@@ -9,6 +8,7 @@ import {
     ResponsiveContainer,
 } from 'recharts';
 import { useState } from 'react';
+import CardLayout from '../../layout/CardLayout';
 
 const monthlySalesData = [
     { month: '1월', sales: 4000 },
@@ -24,14 +24,11 @@ export default function SalesOverviewChart() {
     const [selectedTimeRange, setSelectedTimeRange] = useState('This Month');
 
     return (
-        <motion.div
-            className='bg-gray-800/50 backdrop-blur-md shadow-lg rounded-xl p-6 border border-gray-700 mb-8'
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-        >
+        <CardLayout className='mb-8 lg:col-span-2'>
             <div className='flex items-center justify-between mb-6'>
-                <h2 className='text-xl font-semibold text-gray-100'>매출 현황</h2>
+                <h2 className='text-xl font-semibold text-gray-100'>
+                    매출 현황
+                </h2>
 
                 <select
                     className='bg-gray-700 text-white rounded-md px-3 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500'
@@ -71,6 +68,6 @@ export default function SalesOverviewChart() {
                     </AreaChart>
                 </ResponsiveContainer>
             </div>
-        </motion.div>
+        </CardLayout>
     );
 }

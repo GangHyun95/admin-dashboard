@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Search } from 'lucide-react';
+import CardLayout from '../../layout/CardLayout';
 
 const userData = [
     {
@@ -56,12 +57,7 @@ export default function UsersTable() {
     };
 
     return (
-        <motion.div
-            className='bg-gray-800/50 backdrop-blur-md shadow-lg rounded-xl p-6 border border-gray-700 mb-8'
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-        >
+        <CardLayout className='mb-8'>
             <div className='flex justify-between items-center mb-6'>
                 <h2 className='text-xl font-semibold text-gray-100'>
                     사용자 목록
@@ -169,6 +165,6 @@ export default function UsersTable() {
                     </tbody>
                 </table>
             </div>
-        </motion.div>
+        </CardLayout>
     );
 }

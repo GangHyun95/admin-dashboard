@@ -1,9 +1,9 @@
 import { CreditCard, DollarSign, ShoppingCart, TrendingUp } from 'lucide-react';
-import ChartLayout from '../layout/ChartLayout';
 import StatCardLayout from '../layout/StatCardLayout';
 import SalesOverviewChart from '../components/sales/SalesOverviewChart';
 import SalesByCategoryChart from '../components/sales/SalesByCategoryChart';
 import DailySalesTrend from '../components/sales/DailySalesTrend';
+import GridLayout from '../layout/GridLayout';
 
 const statCardData = [
     {
@@ -35,11 +35,11 @@ const SalesPage = () => {
     return (
         <>
             <StatCardLayout data={statCardData} />
-            <SalesOverviewChart />
-            <ChartLayout>
+            <GridLayout>
+                <SalesOverviewChart />
                 <SalesByCategoryChart />
                 <DailySalesTrend />
-            </ChartLayout>
+            </GridLayout>
         </>
     );
 };

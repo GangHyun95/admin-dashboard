@@ -1,10 +1,10 @@
 import { UserCheck, UserPlus, UsersIcon, UserX } from 'lucide-react';
 import StatCardLayout from '../layout/StatCardLayout';
-import ChartLayout from '../layout/ChartLayout';
 import UsersTable from '../components/users/UsersTable';
 import UserGrowthChart from '../components/users/UserGrowthChart';
 import UserActivityHeatmap from '../components/users/UserActivityHeatmap';
 import UserDemoGraphicsChart from '../components/users/UserDemoGraphicsChart';
+import GridLayout from '../layout/GridLayout';
 
 const statCardData = [
     {
@@ -39,11 +39,11 @@ export default function UsersPage() {
             <StatCardLayout data={statCardData} />
             <UsersTable />
 
-            <ChartLayout>
+            <GridLayout>
                 <UserGrowthChart />
                 <UserActivityHeatmap />
                 <UserDemoGraphicsChart />
-            </ChartLayout>
+            </GridLayout>
         </>
     );
 }

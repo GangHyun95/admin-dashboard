@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import OverviewPage from './pages/OverviewPage';
 import ProductsPage from './pages/ProductsPage';
-import Layout from './layout/Layout';
+import MainLayout from './layout/MainLayout';
 import UsersPage from './pages/UsersPage';
 import SalesPage from './pages/SalesPage';
 import OrdersPage from './pages/OrdersPage';
@@ -11,7 +11,7 @@ import AnalyticsPage from './pages/AnalyticsPage';
 function App() {
     return (
         <Routes>
-            <Route path='/' element={<Layout />}>
+            <Route path='/' element={<MainLayout />}>
                 <Route index element={<OverviewPage />} />
                 <Route path='products' element={<ProductsPage />} />
                 <Route path='users' element={<UsersPage />} />

@@ -1,9 +1,9 @@
 import { BarChart2, ShoppingBag, Users, Zap } from 'lucide-react';
+import StatCardLayout from '../layout/StatCardLayout';
+import GridLayout from '../layout/GridLayout';
 import SalesOverviewChart from '../components/overview/SalesOverviewChart';
 import CategoryDistributionChart from '../components/overview/CategoryDistributionChart';
 import SalesChannelChart from '../components/overview/SalesChannelChart';
-import ChartLayout from '../layout/ChartLayout';
-import StatCardLayout from '../layout/StatCardLayout';
 
 const statCardData = [
     {
@@ -37,11 +37,11 @@ export default function OverviewPage() {
         <>
             <StatCardLayout data={statCardData} />
 
-            <ChartLayout>
+            <GridLayout>
                 <SalesOverviewChart />
                 <CategoryDistributionChart />
                 <SalesChannelChart />
-            </ChartLayout>
+            </GridLayout>
         </>
     );
 }

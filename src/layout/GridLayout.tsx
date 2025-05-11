@@ -1,5 +1,6 @@
 import React from 'react';
-export default function ChartLayout({
+
+export default function GridLayout({
     children,
 }: {
     children: React.ReactNode;

@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import {
     BarChart,
     Bar,
@@ -8,6 +7,7 @@ import {
     Tooltip,
     ResponsiveContainer,
 } from 'recharts';
+import CardLayout from '../../layout/CardLayout';
 
 const dailySalesData = [
     { name: '월', sales: 1000 },
@@ -21,12 +21,7 @@ const dailySalesData = [
 
 export default function DailySalesTrend() {
     return (
-        <motion.div
-            className='bg-gray-800/50 backdrop-blur-md shadow-lg rounded-xl p-6 border border-gray-700'
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-        >
+        <CardLayout delay={0.4}>
             <h2 className='text-xl font-semibold text-gray-100 mb-4'>
                 요일별 매출 현황
             </h2>
@@ -48,6 +43,6 @@ export default function DailySalesTrend() {
                     </BarChart>
                 </ResponsiveContainer>
             </div>
-        </motion.div>
+        </CardLayout>
     );
 }

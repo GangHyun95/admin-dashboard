@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Search, Edit, Trash2 } from 'lucide-react';
 import React, { useState } from 'react';
+import CardLayout from '../../layout/CardLayout';
 
 const PRODUCT_DATA = [
     {
@@ -60,12 +61,7 @@ export default function ProductsTable() {
     };
 
     return (
-        <motion.div
-            className='bg-gray-800/50 backdrop-blur-md shadow-lg rounded-xl p-6 border border-gray-700 mb-8'
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-        >
+        <CardLayout className='mb-8'>
             <div className='flex justify-between items-center mb-6'>
                 <h2 className='text-xl font-semibold text-gray-100'>
                     상품 목록
@@ -141,18 +137,18 @@ export default function ProductsTable() {
                                     {product.sales}
                                 </td>
                                 <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-300'>
-									<button className='text-indigo-400 hover:text-indigo-300 mr-2'>
-										<Edit size={18} />
-									</button>
-									<button className='text-red-400 hover:text-red-300'>
-										<Trash2 size={18} />
-									</button>
-								</td>
+                                    <button className='text-indigo-400 hover:text-indigo-300 mr-2'>
+                                        <Edit size={18} />
+                                    </button>
+                                    <button className='text-red-400 hover:text-red-300'>
+                                        <Trash2 size={18} />
+                                    </button>
+                                </td>
                             </motion.tr>
                         ))}
                     </tbody>
                 </table>
             </div>
-        </motion.div>
+        </CardLayout>
     );
 }
