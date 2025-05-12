@@ -39,7 +39,7 @@ export default function SalesByCategoryChart() {
                             }
                             isAnimationActive={false}
                         >
-                            {salesByCategory.map((entry, index) => (
+                            {salesByCategory.map((_, index) => (
                                 <Cell
                                     key={`cell-${index}`}
                                     fill={COLORS[index % COLORS.length]}

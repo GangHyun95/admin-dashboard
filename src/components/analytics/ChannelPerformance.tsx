@@ -46,7 +46,7 @@ export default function ChannelPerformance() {
                             }
                             isAnimationActive={false}
                         >
-                            {channelData.map((entry, index) => (
+                            {channelData.map((_, index) => (
                                 <Cell
                                     key={`cell-${index}`}
                                     fill={COLORS[index % COLORS.length]}

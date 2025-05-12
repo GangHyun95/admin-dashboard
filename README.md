@@ -1,54 +1,28 @@
-# React + TypeScript + Vite
+## 시연 페이지
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Live Demo](https://merntodo-client.onrender.com/)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 프로젝트 소개
 
-## Expanding the ESLint configuration
+<p>이 프로젝트는 Framer Motion과 Recharts를 학습하기 위해 제작한 정적인 대시보드 웹사이트입니다.</p>
+<p>실시간 기능이나 백엔드 연동 없이, 모든 데이터는 하드코딩된 값으로 구성했으며, 인터랙션, 애니메이션, 차트 시각화 흐름에 집중했습니다.</p>
+<p>Framer Motion을 활용해 부드러운 등장 애니메이션을 구현했고, Recharts를 사용해 막대형(bar), 선형(line), 영역형(area), 파이형(pie), 레이더형(radar) 등 다양한 차트를 시각화해 보았습니다.</p>
+<p>디자인은 Tailwind CSS를 기반으로 구성되었으며, 관리자 페이지 스타일의 정적인 UI 레이아웃 구현에 중점을 뒀습니다.</p>
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 기술 스택
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+| JavaScript | TypeScript |  React   |
+| :--------: | :--------: | :------: |
+|   ![js]    |   ![ts]    | ![react] |
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+<!-- Stack Icon References -->
+
+[js]: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg
+[ts]: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg
+[react]: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg

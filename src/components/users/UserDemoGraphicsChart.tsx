@@ -39,7 +39,7 @@ export default function UserDemographicsChart() {
                             }
                             isAnimationActive={false}
                         >
-                            {userDemographicsData.map((entry, index) => (
+                            {userDemographicsData.map((_, index) => (
                                 <Cell
                                     key={`cell-${index}`}
                                     fill={COLORS[index % COLORS.length]}

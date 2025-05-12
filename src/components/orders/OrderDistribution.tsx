@@ -37,7 +37,7 @@ export default function OrderDistribution() {
                             }
                             isAnimationActive={false}
                         >
-                            {orderStatusData.map((entry, index) => (
+                            {orderStatusData.map((_, index) => (
                                 <Cell
                                     key={`cell-${index}`}
                                     fill={COLORS[index % COLORS.length]}
